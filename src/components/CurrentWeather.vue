@@ -36,11 +36,13 @@ const currentWeather = computed(() => weatherStore.currentWeather)
 const loading = computed(() => weatherStore.loading)
 const temperatureSymbol = computed(() => weatherStore.temperatureSymbol)
 
-const getWeatherIcon = (iconCode) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getWeatherIcon = (iconCode: any) => {
   return `https://openweathermap.org/img/wn/${iconCode}@4x.png`
 }
 
-const getRainChance = (weather) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getRainChance = (weather: any) => {
   if (weather.pop !== undefined) return Math.round(weather.pop * 100)
   if (weather.rain && weather.rain["1h"]) return 100
   return 30
@@ -107,4 +109,4 @@ const getRainChance = (weather) => {
   object-fit: cover;
   display: block;
 }
-</style> 
+</style>
